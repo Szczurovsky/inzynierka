@@ -26,7 +26,7 @@ background: radial-gradient(circle, rgba(10,33,149,0.5466561624649859) 0%, rgba(
     display:flex;align-items:center;
     justify-content:center;
     border-bottom:1px solid black;
-        border-top:1px solid black;
+    border-top:1px solid black;
 
 `
 export const MenuPC = props => {
