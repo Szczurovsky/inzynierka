@@ -1,5 +1,6 @@
 import  { Component } from 'react';
 import styled from "styled-components";
+import { useState, useEffect } from "react";
 
 
 
@@ -12,16 +13,38 @@ const Page = styled.div`
    flex-direction: column;
  
 `
+export const MainPage = () => {
 
-
-class MainPage extends Component {
-
-    render() {
-        return (
+//     // const [loading, setLoading] = useState(true);
+//     // const [error, setError] = useState(null);
+    return (
+       
             <>
               <Page></Page>
             </>
-        )
-    }
+       
+    )
 }
-export default MainPage
+
+// class MainPage extends Component {
+
+
+
+//     const staty = { siła: 1 }
+
+//     async function fetcha() {
+//     const response = await fetch('https://backinz.herokuapp.com/api/v1/klans');
+//     const movies = await response.json();
+//     setData(movies)
+// }
+
+
+//     render() {
+//         return (
+//             <>
+//               <Page></Page>
+//             </>
+//         )
+//     }
+// }
+// export default MainPage
