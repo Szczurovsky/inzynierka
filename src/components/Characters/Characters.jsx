@@ -33,10 +33,10 @@ export const Characters = props => {
     return (
     
         <>   
-            <p>sssss</p>
+            <p>ssssssawdasdawds</p>
             {/* {console.log(props)} */}
             {console.log(props.aktstat)}
-            {cosnole.log(props)}
+            {console.log(props)}
             <button onClick={()=>props.saveStats({siła:3, sila_woli:5})}>sss</button> 
          
     
