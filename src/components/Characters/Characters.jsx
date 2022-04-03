@@ -37,7 +37,7 @@ export const Characters = props => {
             {console.log(props)}
             {console.log(props.aktstat)}
             {console.log(props.klany[0].jarl)}
-
+            <p>{props.klany[0].jarl}</p>
             <button onClick={()=>props.saveStats({siła:3, sila_woli:5})}>sss</button> 
          
     
