@@ -66,6 +66,8 @@ export const StartPageUse = (props) => {
     useEffect(() => {
         async function fetchData() {
             const result = await axios("https://backinz.herokuapp.com/api/v2/postacs");
+            const result1 = await axios("https://backinz.herokuapp.com/api/v2/klans");
+            setKlans(result1);
             setPostac(result.data[0]);
             setProfesja(result.data[0].profesja)
             setLoading(false)
@@ -80,7 +82,7 @@ export const StartPageUse = (props) => {
     return (
 
         <Router>
-            {console.log(profesja)}
+            {console.log(statystyki)}
             <MenuPC />
             <Routes>
 
@@ -93,6 +95,7 @@ export const StartPageUse = (props) => {
                         <Characters
                             klany={klans}
                             // saveStats={this.saveStats}
+                            statystykiSave={setStatystyki}
                             postac={postac}
                             loading={loading}
                             profesja={profesja}
