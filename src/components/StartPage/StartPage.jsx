@@ -25,7 +25,8 @@ class StartPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: null,
+            klans: null,
+            postac: null,
             staty: {
                 sila: 1,
                 sila_woli: 2,
@@ -34,19 +35,40 @@ class StartPage extends React.Component {
         };
     }
     componentDidMount() {
-        this.getData();
+        this.getKlans();
+        this.getPostac();
     }
-    getData = () => {
-        fetch("https://backinz.herokuapp.com/api/v1/klans")
+    getKlans = () => {
+        fetch("https://backinz.herokuapp.com/api/v2/klans")
             .then((response) => response.json())
             .then((response_items) => {
-                this.setState({ data: response_items });
+                this.setState({ klans: response_items });
             });
     }
-    saveStats = (stats) => {
-      
-        console.log(stats)
-        this.setState({staty: stats})
+    getPostac = () => {
+        fetch("https://backinz.herokuapp.com/api/v2/postacs")
+            .then((response) => response.json())
+            .then((response_items) => {
+                this.setState({ postac: response_items });
+            });
+    }
+
+    saveStats = (zmienna) => {
+        //   const test = {...this.state.postac, : }
+        const key = this.state.postac.map(object => object.klan);
+        console.log(key)
+        const wartosc = key.map(object => object[0].jarl);
+        console.log(wartosc)
+        // console.log(stats)
+        // this.setState({postac: zmienna})
+
+        this.setState(prevState => ({
+            postac: 
+                prevState.postac.map(
+                   el => el.key === key? {...el, step:2 }: el
+               )
+            }
+        ))
     }
     render(){
     return(
@@ -61,9 +83,9 @@ class StartPage extends React.Component {
                     path="characters"
                     element={
                         <Characters
-                            klany={this.state.data}
+                            klany={this.state.klans}
                             saveStats={this.saveStats}
-                    
+                            postac={this.state.postac}
                             aktstat={this.state.staty}
                         />
                     }

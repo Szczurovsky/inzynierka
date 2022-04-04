@@ -1,0 +1,109 @@
+
+
+// import MainPage from "./components/MainPage/MainPage";
+import { MainPage } from "../MainPage/MainPage";
+import { MenuPC } from "../Menu/MenuPC/MenuPC";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { GamePage } from "../GamePage/GamePage";
+import { Characters } from "../Characters/Characters";
+import { Story } from "../StoryLine/Story";
+// import { Forum } from "./components/Forum/Forum";
+import { useState, useEffect } from "react";
+import { About } from "../About/About.jsx";
+import axios from "axios"
+import React from "react"
+export const StartPageUse = (props) =>{
+    const [klans, setKlans] = useState();
+    const [postac, setPostac] = useState();
+    const [statystyki, setStatystyki] = useState();
+    const [profesja, setProfesja] = useState();
+    const [loading, setLoading] = useState(true);
+
+    // componentDidMount = () => {
+    //     setKlans();
+    //     setPostac();
+    // }
+    // async function getKlans() {
+    //     // fetch("https://backinz.herokuapp.com/api/v2/klans")
+    //     //     .then((response) => response.json())
+    //     //     .then((response_items) => {
+    //     //         setKlans({ klans: response_items });
+    //     //     });
+    //     const result = await axios("https://backinz.herokuapp.com/api/v2/klans");
+    //     setKlans({ klans: result });
+    // }
+   async function getPostac(){
+        // fetch("https://backinz.herokuapp.com/api/v2/postacs")
+        //     .then((response) => response.json())
+        //     .then((response_items)=>setPostac(response_items))
+        //     // .then((response_items) => {
+            //     this.setState({ postac: response_items });
+            // });
+   
+    }
+    // function getAll() {
+    //     getKlans();
+    //     getPostac();
+    //     console.log(postac)
+    // }
+    // saveStats = (zmienna) => {
+    //     //   const test = {...this.state.postac, : }
+    //     const key = this.state.postac.map(object => object.klan);
+    //     console.log(key)
+    //     const wartosc = key.map(object => object[0].jarl);
+    //     console.log(wartosc)
+    //     // console.log(stats)
+    //     // this.setState({postac: zmienna})
+
+    //     this.setState(prevState => ({
+    //         postac:
+    //             prevState.postac.map(
+    //                 el => el.key === key ? { ...el, step: 2 } : el
+    //             )
+    //     }
+    //     ))
+    // }
+    useEffect( () => {
+        async function fetchData() {
+        const result = await axios("https://backinz.herokuapp.com/api/v2/postacs");
+        setPostac( result.data[0] );
+            setProfesja(result.data[0].profesja)
+            setLoading(false)
+        }
+        
+        fetchData();
+        // const result = await axios("https://backinz.herokuapp.com/api/v2/postacs");
+        // setPostac( result.data[0] );
+        // setProfesja(result.data[0].profesja)
+       
+    }, []);
+    return (
+           
+        <Router>
+            {console.log(profesja)}
+                <MenuPC />
+                <Routes>
+         
+                    <Route path="/" element={<MainPage />} />
+                    <Route path="home" element={<MainPage />} />
+                    <Route path="norgmar" element={<GamePage />} />
+                    <Route
+                        path="characters"
+                        element={
+                            <Characters
+                                klany={klans}
+                                // saveStats={this.saveStats}
+                                postac={postac}
+                                loading={loading}
+                                // aktstat={this.state.staty}
+                            />
+                        }
+                    />
+                    <Route path="story-line" element={<Story />} />
+                    <Route path="ekipa" element={<About />} />
+                </Routes>
+            </Router>
+        )
+    
+
+}

@@ -32,14 +32,22 @@ export const Characters = props => {
     
     return (
     
-        <>   
-            <p>sssss</p>
+        <>  
+            {props.loading ? <p>sssaa</p>
+          
+               
+                : <>
+                    {console.log(props.postac)} 
+                     <p>{props.postac.imie}</p> 
+                    <button onClick={()=>props.saveStats("klan")}>sss</button> 
+                </>}    
+            {/* // <p>sssss</p> */}
             {/* {console.log(props)} */}
-            {console.log(props.aktstat)}
-            {console.log(props)}
-
-            <p>testuje branche</p>
-            <button onClick={()=>props.saveStats({siła:3, sila_woli:5})}>sss</button> 
+ {/* {console.log(props.aktstat)}
+            {console.log(props)} */}
+             {/* {console.log(props.postac)} */}
+             {/* <p>{props.postac.imie}</p> */}
+             {/* <button onClick={()=>props.saveStats("klan")}>sss</button>  */}
          
     
         </>
