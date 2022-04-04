@@ -95,6 +95,7 @@ export const StartPageUse = (props) => {
                             // saveStats={this.saveStats}
                             postac={postac}
                             loading={loading}
+                            profesja={profesja}
                         // aktstat={this.state.staty}
                         />
                     }

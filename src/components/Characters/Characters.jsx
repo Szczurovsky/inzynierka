@@ -38,7 +38,7 @@ export const Characters = props => {
 
 
                     : <>
-                        {console.log(props.postac)}
+                        {console.log(props.postac.profesja)}
                         <p>{props.postac.imie}</p>
                         <button onClick={() => props.saveStats("klan")}>sss</button>
                     </>
