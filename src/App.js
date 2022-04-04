@@ -11,10 +11,11 @@ import { Forum } from "./components/Forum/Forum";
 import { useState, useEffect } from "react";
 import { About } from "./components/About/About.jsx";
 import StartPage from "./components/StartPage/StartPage.jsx";
+import { StartPageUse } from "./components/StartPage/StartPageUse.jsx";
 function App(props) {
     return (
         <div className="App">
-            <StartPage />
+            <StartPageUse />
         </div>
     );
 }

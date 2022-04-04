@@ -33,12 +33,16 @@ export const Characters = props => {
     return (
     
         <>   
-            <p>ssssssawdasdawds</p>
-            {console.log(props)}
-            {console.log(props.aktstat)}
-            {console.log(props.klany[0].jarl)}
-            <p>{props.klany[0].jarl}</p>
-            <button onClick={()=>props.saveStats({siła:3, sila_woli:5})}>sss</button> 
+         
+                {props.loading ? <p>sssaa</p>
+
+
+                    : <>
+                        {console.log(props.postac)}
+                        <p>{props.postac.imie}</p>
+                        <button onClick={() => props.saveStats("klan")}>sss</button>
+                    </>
+                }
          
     
         </>
