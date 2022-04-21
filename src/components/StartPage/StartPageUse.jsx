@@ -15,7 +15,20 @@ import React from "react"
 export const StartPageUse = (props) => {
     const [klans, setKlans] = useState();
     const [postac, setPostac] = useState();
-    const [statystyki, setStatystyki] = useState();
+    const [statystyki, setStatystyki] = useState({
+        id: 1, imie: "", profesja: "", klan: {
+            jarl: "",
+            nastepca: "",
+            nazwa: "",
+            opis: "",
+            polozenie: "",
+            premie: {
+                sila: "",
+                sila_woli: "",
+            },
+            stolica: "Nidergheim"
+        }
+    });
     const [profesja, setProfesja] = useState();
     const [loading, setLoading] = useState(true);
 
@@ -67,7 +80,7 @@ export const StartPageUse = (props) => {
         async function fetchData() {
             const result = await axios("https://backinz.herokuapp.com/api/v2/postacs");
             const result1 = await axios("https://backinz.herokuapp.com/api/v2/klans");
-            setKlans(result1);
+            setKlans(result1.data[0]);
             setPostac(result.data[0]);
             setProfesja(result.data[0].profesja)
             setLoading(false)
@@ -99,6 +112,7 @@ export const StartPageUse = (props) => {
                             postac={postac}
                             loading={loading}
                             profesja={profesja}
+                            statystyki={statystyki}
                         // aktstat={this.state.staty}
                         />
                     }

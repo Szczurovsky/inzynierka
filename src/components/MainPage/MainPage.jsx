@@ -13,6 +13,7 @@ const Page = styled.div`
    flex-direction: column;
  
 `
+//AKTUALNIE NIE UZYWANY KOMPONENT
 export const MainPage = () => {
 
 //     // const [loading, setLoading] = useState(true);

@@ -1,7 +1,7 @@
 import react from "react";
 import styled from "styled-components"
 import { Link } from "react-router-dom";
-
+import {LoadingChar} from "./LoadingChar"
 
 
 
@@ -34,13 +34,26 @@ export const Characters = props => {
     
         <>   
          
-                {props.loading ? <p>sssaa</p>
+                {props.loading ? <LoadingChar/>
 
 
                     : <>
-                        {console.log(props.postac)}
-                        <p>{props.postac.imie}</p>
-                    <button onClick={() => props.statystykiSave({id:1, imie: props.postac.imie, profesja:props.postac.profesja, klan:props.postac.klan, })}>sss</button>
+                        {console.log(props.statystyki.imie)}
+                        <p>{props.statystyki.imie}</p>
+                    <button onClick={() => props.statystykiSave({
+                        id: 1, imie: "Michał", profesja: "Wojownik tary", klan: {
+                            jarl: props.klany.jarl,
+                            nastepca: props.klany.nastepca,
+                            nazwa: props.klany.nazwa,
+                            opis: props.klany.opis,
+                            polozenie: props.klany.polozenie,
+                            premie: {
+                                sila: props.klany.statystyki[0].sila,
+                                sila_woli: props.klany.statystyki[0].sila_woli,
+                            },
+                            stolica: "Nidergheim"
+                        },
+                    })}>sss</button>
                     </>
                 }
          
