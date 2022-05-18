@@ -37,11 +37,14 @@ class StartPage extends React.Component {
         this.getData();
     }
     getData = () => {
-        fetch("https://backinz.herokuapp.com/api/v3/postacs")
+        fetch("https://inzynierkatest.herokuapp.com/api/v3/postacs")
             .then((response) => response.json())
             .then((response_items) => {
                 this.setState({ data: response_items });
-            });
+            })
+            .then((response_items) => console.log(response_items));
+            
+        
     }
     saveStats = (stats) => {
       
