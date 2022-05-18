@@ -53,7 +53,7 @@ export const Characters = props => {
                             },
                             stolica: "Nidergheim"
                         },
-                    })}>sss</button>
+                    })}>abcdsesfa</button>
 
                     
                     </>
