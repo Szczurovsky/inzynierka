@@ -42,7 +42,7 @@ class StartPage extends React.Component {
             .then((response_items) => {
                 this.setState({ data: response_items });
             })
-            .then((response_items) => console.log(response_items));
+            .then((response_items) => console.log("odpowiedz zstad" + response_items));
             
         
     }

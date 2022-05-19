@@ -1,19 +1,21 @@
 import  { Component } from 'react';
 import styled from "styled-components";
 import { useState, useEffect } from "react";
-
+import Registration from "../Auth/Registrations"
 
 
 const Page = styled.div`
      width: 100%;
     display: flex;
-    height:100vh;
+    /* height:100vh; */
     background-color:#171717;
     /* justify-content: center; */
    flex-direction: column;
+   color:white;
+   letter-spacing: 2px;
  
 `
-//AKTUALNIE NIE UZYWANY KOMPONENT
+
 export const MainPage = () => {
 
 //     // const [loading, setLoading] = useState(true);
@@ -21,7 +23,8 @@ export const MainPage = () => {
     return (
        
             <>
-              <Page></Page>
+              <Page>ssss</Page>
+              <Registration />
             </>
        
     )

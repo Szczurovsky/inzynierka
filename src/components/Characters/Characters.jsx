@@ -33,13 +33,13 @@ export const Characters = props => {
     return (
     
         <>   
-         
+            {console.log(props.postac)}
                 {props.loading ? <LoadingChar/>
 
 
                     : <>
-                        {console.log(props.statystyki.imie)}
-                        <p>{props.statystyki.imie}</p>
+                       
+                      
                     <button onClick={() => props.statystykiSave({
                         id: 1, imie: "Michał", profesja: "Wojownik tary", klan: {
                             jarl: props.klany.jarl,

@@ -78,7 +78,7 @@ export const StartPageUse = (props) => {
     // }
     useEffect(() => {
         async function fetchData() {
-            const result = await axios("https://backinz.herokuapp.com/api/v2/postacs");
+            const result = await axios("https://inzynierkatest.herokuapp.com/api/v3/postacs");
             const result1 = await axios("https://backinz.herokuapp.com/api/v2/klans");
             setKlans(result1.data[0]);
             setPostac(result.data[0]);
