@@ -11,7 +11,7 @@ export default class Registration extends React.Component {
         }
     }
     handleSubmit = (event) => {
-        axios.post("http://inzynierkatest.herokuapp.com/api/v3/registrations", {
+        axios.post("https://inzynierkatest.herokuapp.com/api/v3/registrations", {
             user: {
                 email: this.state.email,
                 password: this.state.password,
@@ -21,7 +21,8 @@ export default class Registration extends React.Component {
             {withCredentials: true}
         )
             .then(response => {
-                if(response.data.status === "created"){
+                if (response.data.status === "created") {
+                    console.log(response)
                     this.props.handleSuccessfulAuth(response)
         }
         })
