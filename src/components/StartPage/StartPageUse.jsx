@@ -101,9 +101,9 @@ export const StartPageUse = (props) => {
             <MenuPC />
             <Routes>
 
-                <Route path="/" element={<MainPage {...props} loggedInStatus={loginStatus}/>} />
-                <Route path="home" element={<MainPage {...props} loggedInStatus={loginStatus}/>} />
-                <Route path="norgmar" element={<GamePage loggedInStatus={loginStatus}/>} />
+                <Route path="/" element={<MainPage {...props} setLoginStatus={setLoginStatus} setUser={setUser} loggedInStatus={loginStatus}/>} />
+                <Route path="home" element={<MainPage {...props} setLoginStatus={setLoginStatus} setUser={setUser} loggedInStatus={loginStatus}/>} />
+                <Route path="norgmar" element={<GamePage {...props} loggedInStatus={loginStatus}/>} />
                 <Route
                     path="characters"
                     element={
