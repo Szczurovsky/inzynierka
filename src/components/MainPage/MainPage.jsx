@@ -1,5 +1,6 @@
 import  { Component } from 'react';
 import styled from "styled-components";
+import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from "react";
 import Registration from "../Auth/Registrations"
 
@@ -17,9 +18,9 @@ const Page = styled.div`
 `
 
 export const MainPage = (props) => {
-
+  const navigate = useNavigate();
   const handleSuccessfulAuth = (data) => {
-      props.history.push("/dashboard")
+      navigate("/dashboard")
     }
 //     // const [loading, setLoading] = useState(true);
 //     // const [error, setError] = useState(null);
