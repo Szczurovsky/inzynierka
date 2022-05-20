@@ -21,7 +21,7 @@ export const MainPage = (props) => {
   const navigate = useNavigate();
   const handleSuccessfulAuth = (data) => {
       props.setLoginStatus("Logged in")
-      props.setUser(data.user)
+      props.setUser(data)
       navigate("/norgmar")
     }
 //     // const [loading, setLoading] = useState(true);
