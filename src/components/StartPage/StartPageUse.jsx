@@ -10,6 +10,7 @@ import { Story } from "../StoryLine/Story";
 // import { Forum } from "./components/Forum/Forum";
 import { useState, useEffect } from "react";
 import { About } from "../About/About.jsx";
+import {Walka} from "../Walka/Walka.jsx"
 import axios from "axios"
 import React from "react"
 export const StartPageUse = (props) => {
@@ -95,7 +96,7 @@ export const StartPageUse = (props) => {
     return (
 
         <Router>
-            {console.log(statystyki)}
+         
             <MenuPC />
             <Routes>
 
@@ -119,6 +120,7 @@ export const StartPageUse = (props) => {
                 />
                 <Route path="story-line" element={<Story />} />
                 <Route path="ekipa" element={<About />} />
+                <Route path="walka" element={<Walka />} />
             </Routes>
         </Router>
     )

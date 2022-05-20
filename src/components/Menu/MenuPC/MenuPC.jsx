@@ -37,7 +37,7 @@ export const MenuPC = props => {
             <Button to="story-line">Fabuła</Button>
             <Button to="characters">Postacie</Button>
             <Button to="ekipa">Ekipa</Button>
-           
+           <Button to="walka">Walka</Button>
         </Main>
     )
 

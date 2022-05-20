@@ -11,7 +11,7 @@ export default class Registration extends React.Component {
         }
     }
     handleSubmit = (event) => {
-        axios.post("https://inzynierkatest.herokuapp.com/api/v3/registrations", {
+        axios.post("http://inzynierkatest.herokuapp.com/api/v3/registrations", {
             user: {
                 email: this.state.email,
                 password: this.state.password,
