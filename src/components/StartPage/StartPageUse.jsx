@@ -32,7 +32,8 @@ export const StartPageUse = (props) => {
     });
     const [profesja, setProfesja] = useState();
     const [loading, setLoading] = useState(true);
-
+    const [loginStatus, setLoginStatus] = useState("NOT_LOGGED_IN");
+    const [user, setUser] = useState({});
     // componentDidMount = () => {
     //     setKlans();
     //     setPostac();
@@ -100,9 +101,9 @@ export const StartPageUse = (props) => {
             <MenuPC />
             <Routes>
 
-                <Route path="/" element={<MainPage />} />
-                <Route path="home" element={<MainPage />} />
-                <Route path="norgmar" element={<GamePage />} />
+                <Route path="/" element={<MainPage {...props} loggedInStatus={loginStatus}/>} />
+                <Route path="home" element={<MainPage  {...props} loggedInStatus={loginStatus}/>} />
+                <Route path="norgmar" element={<GamePage loggedInStatus={loginStatus}/>} />
                 <Route
                     path="characters"
                     element={

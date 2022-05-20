@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 export const GamePage = props => {
     return (
         <>
-            Wiktoria jest fajan
+           Status: {props.loggedInStatus}
         </>
     )
 

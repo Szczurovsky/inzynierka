@@ -16,15 +16,18 @@ const Page = styled.div`
  
 `
 
-export const MainPage = () => {
+export const MainPage = (props) => {
 
+  const handleSuccessfulAuth = (data) => {
+      props.history.push("/dashboard")
+    }
 //     // const [loading, setLoading] = useState(true);
 //     // const [error, setError] = useState(null);
     return (
        
             <>
-              <Page>ssss</Page>
-              <Registration />
+              <Page>Status: {props.loggedInStatus}</Page>
+              <Registration handleSuccessfulAuth={handleSuccessfulAuth}/>
             </>
        
     )

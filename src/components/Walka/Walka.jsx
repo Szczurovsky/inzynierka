@@ -43,8 +43,15 @@ export const Walka = () => {
         }   
     )
     let [tura, setTura] = useState(0);
-    const writeAttacks = (ataki) => {
-        
+    const writeAttacks = () => {
+        return(
+        attacks.map((atak) => {
+            // console.log(atak.nazwa)
+            return (
+                <button key={atak.id} onClick={() => { turaGry(atak.obrazenia) }}>{atak.nazwa}</button>
+            )
+        })
+        )
     }
 
  
@@ -80,14 +87,9 @@ export const Walka = () => {
     // }
     return (
         <div>  
-            {attacks.map((atak) => {
-                // console.log(atak.nazwa)
-                return (
-                    <button key={atak.id} onClick={() => { turaGry(atak.obrazenia) }}>{atak.nazwa}</button>            
-                )
-            })}
+            {writeAttacks()}
             <p>Ilość punktów życia przeciwnika: {przeciwnik.zycie}</p>
-            <p>Ilosc punktow zycia gracza : {postac.zycie}</p>
+            <p>Ilosc punktow zycia gracza: {postac.zycie}</p>
             <p>Tura: {tura}</p>
             {tura > 0 ?
                 (

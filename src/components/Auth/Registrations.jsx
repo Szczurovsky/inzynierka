@@ -20,6 +20,11 @@ export default class Registration extends React.Component {
         },
             {withCredentials: true}
         )
+            .then(response => {
+                if(response.data.status === "created"){
+                    this.props.handleSuccessfulAuth(response)
+        }
+        })
         event.preventDefault();
     }
     handleChange = (event) => {
