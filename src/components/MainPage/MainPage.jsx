@@ -20,7 +20,7 @@ const Page = styled.div`
 export const MainPage = (props) => {
   const navigate = useNavigate();
   const handleSuccessfulAuth = (data) => {
-      navigate("/dashboard")
+      navigate("/norgmar")
     }
 //     // const [loading, setLoading] = useState(true);
 //     // const [error, setError] = useState(null);
