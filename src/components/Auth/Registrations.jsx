@@ -22,7 +22,7 @@ export default class Registration extends React.Component {
         )
             .then(response => {
                 if (response.data.status === "created") {
-                    console.log(response)
+                    console.log("rejestracja zakonczona",response)
                     this.props.handleSuccessfulAuth(response.data)
         }
         })
