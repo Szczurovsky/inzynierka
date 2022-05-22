@@ -95,7 +95,10 @@ export const StartPageUse = (props) => {
            
     //         .catch(error => { console.log("errors", error) })
     // }
-
+    const handleLogin = (data) => {
+        setLoginStatus("LOGGED_IN");
+        setUser({data});
+    }
     useEffect(() => {
         // async function fetchData() {
         axios.get("https://inzynierkatest.herokuapp.com/api/v3/logged_in", { withCredentials: true })
@@ -135,9 +138,11 @@ export const StartPageUse = (props) => {
             <MenuPC />
             <Routes>
 
-                <Route path="/" element={<MainPage {...props} setLoginStatus={setLoginStatus} setUser={setUser} loggedInStatus={loginStatus}/>} />
-                <Route path="home" element={<MainPage {...props} setLoginStatus={setLoginStatus} setUser={setUser} loggedInStatus={loginStatus}/>} />
-                <Route path="norgmar" element={<GamePage {...props} loggedInStatus={loginStatus}/>} />
+                {/* <Route path="/" element={<MainPage {...props} setLoginStatus={setLoginStatus} setUser={setUser} loggedInStatus={loginStatus}/>} />
+                <Route path="home" element={<MainPage {...props} setLoginStatus={setLoginStatus} setUser={setUser} loggedInStatus={loginStatus}/>} /> */}
+                <Route path="/" element={<MainPage {...props} handleLogin={handleLogin} loggedInStatus={loginStatus} />} />
+                <Route path="home" element={<MainPage {...props} handleLogin={handleLogin} loggedInStatus={loginStatus} />} />
+                <Route path="norgmar" element={<GamePage {...props} handleLogin={handleLogin} loggedInStatus={loginStatus}/>} />
                 <Route
                     path="characters"
                     element={
