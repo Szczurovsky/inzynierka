@@ -65,7 +65,7 @@ export default class App extends React.Component {
                     handleLogin={this.handleLogin}
                     // setUser={setUser}
                     // setLoginStatus={setLoginStatus}
-                    loginStatus={this.loggedInStatus}
+                    loginStatus={this.state.loggedInStatus}
                 />
             </div>
         );
