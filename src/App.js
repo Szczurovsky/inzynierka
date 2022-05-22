@@ -58,6 +58,38 @@ export default class App extends React.Component {
     //             console.log("errors", error);
     //         });
     // }, []);
+    checkLoginStatus = () => {
+        axios
+            .get("https://inzynierkatest.herokuapp.com/api/v3/logged_in", {
+                withCredentials: true,
+            })
+            .then((response) => {
+                if (
+                    response.data.logged_in &&
+                    this.state.loggedInStatus === "NOT_LOGGED_IN"
+                ) {
+                    this.setState({
+                        loggedInStatus: "LOGGED_IN",
+                        user: response.data.user,
+                    });
+                } else if (
+                    !response.data.logged_in &
+                    (this.state.loggedInStatus === "LOGGED_IN")
+                ) {
+                    this.setState({
+                        loggedInStatus: "NOT_LOGGED_IN",
+                        user: {},
+                    });
+                }
+            })
+
+            .catch((error) => {
+                console.log("login rror", error);
+            });
+    };
+    componentDidMount() {
+        this.checkLoginStatus();
+    }
     render() {
         return (
             <div className="App">
