@@ -54,6 +54,7 @@ function App(props) {
                 handleLogin={handleLogin}
                 setUser={setUser}
                 setLoginStatus={setLoginStatus}
+                loginStatus={loginStatus}
             />
         </div>
     );
