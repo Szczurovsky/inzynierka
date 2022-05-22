@@ -32,14 +32,14 @@ function App(props) {
                     response.data.logged_in &&
                     loginStatus === "NOT_LOGGED_IN"
                 ) {
-                    console.log("loggen in?", response.data.logged_in);
+                    console.log("Jestes zalogowany");
                     setLoginStatus("LOGGED_IN");
                     setUser(response.data.user);
                 } else if (
                     !response.data.logged_in &
                     (loginStatus === "LOGGED_IN")
                 ) {
-                    console.log("loggen in?", response.data.logged_in);
+                    console.log("Nie jestes zalogowany");
                     setLoginStatus("NOT_LOGGED_IN");
                     setUser({});
                 }
