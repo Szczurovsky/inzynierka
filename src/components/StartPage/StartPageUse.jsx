@@ -32,8 +32,7 @@ export const StartPageUse = (props) => {
     });
     const [profesja, setProfesja] = useState();
     const [loading, setLoading] = useState(true);
-    const [loginStatus, setLoginStatus] = useState("NOT_LOGGED_IN");
-    const [user, setUser] = useState({});
+
     // componentDidMount = () => {
     //     setKlans();
     //     setPostac();
@@ -95,40 +94,37 @@ export const StartPageUse = (props) => {
            
     //         .catch(error => { console.log("errors", error) })
     // }
-    const handleLogin = (data) => {
-        setLoginStatus("LOGGED_IN");
-        setUser({data});
-    }
-    useEffect(() => {
-        // async function fetchData() {
-        axios.get("https://inzynierkatest.herokuapp.com/api/v3/logged_in", { withCredentials: true })
-            // .then(response => {
-            //     console.log("TO jest glowny response", response)
-            //     if (!response.data.logged_in && loginStatus === "NOT_LOGGED_IN") {
-            //         console.log("loggen in?", response.data.logged_in)
-            //         setLoginStatus("LOGGED_IN");
-            //         setUser(response.data.user);
-            //     } else if (response.data.logged_in & loginStatus === "LOGGED_IN") {
-            //         console.log("loggen in?", response.data.logged_in)
-            //         setLoginStatus("NOT_LOGGED_IN");
-            //         setUser({});
-            //     }
-            // })
-            .then(response => {
-                console.log("logged in?", response)
-            })
-            .catch(error => { console.log("errors", error) })
-        //     const result = await axios("https://inzynierkatest.herokuapp.com/api/v3/postacs");
-        //     const result1 = await axios("https://backinz.herokuapp.com/api/v2/klans");
-        //     setKlans(result1.data[0]);
-        //     setPostac(result.data[0]);
-        //     setProfesja(result.data[0].profesja)
-        //     setLoading(false)
-        // }
-//    fetchData();
+
+//     useEffect(() => {
+//         // async function fetchData() {
+//         axios.get("https://inzynierkatest.herokuapp.com/api/v3/logged_in", { withCredentials: true })
+//             .then(response => {
+//                 console.log("TO jest glowny response", response)
+//                 if (!response.data.logged_in && loginStatus === "NOT_LOGGED_IN") {
+//                     console.log("loggen in?", response.data.logged_in)
+//                     setLoginStatus("LOGGED_IN");
+//                     setUser(response.data.user);
+//                 } else if (response.data.logged_in & loginStatus === "LOGGED_IN") {
+//                     console.log("loggen in?", response.data.logged_in)
+//                     setLoginStatus("NOT_LOGGED_IN");
+//                     setUser({});
+//                 }
+//             })
+//             // .then(response => {
+//             //     console.log("logged in?", response)
+//             // })
+//             .catch(error => { console.log("errors", error) })
+//         //     const result = await axios("https://inzynierkatest.herokuapp.com/api/v3/postacs");
+//         //     const result1 = await axios("https://backinz.herokuapp.com/api/v2/klans");
+//         //     setKlans(result1.data[0]);
+//         //     setPostac(result.data[0]);
+//         //     setProfesja(result.data[0].profesja)
+//         //     setLoading(false)
+//         // }
+// //    fetchData();
 
 
-    },[]);
+//     },[]);
 
 
     return (
@@ -140,9 +136,9 @@ export const StartPageUse = (props) => {
 
                 {/* <Route path="/" element={<MainPage {...props} setLoginStatus={setLoginStatus} setUser={setUser} loggedInStatus={loginStatus}/>} />
                 <Route path="home" element={<MainPage {...props} setLoginStatus={setLoginStatus} setUser={setUser} loggedInStatus={loginStatus}/>} /> */}
-                <Route path="/" element={<MainPage {...props} handleLogin={handleLogin} loggedInStatus={loginStatus} />} />
-                <Route path="home" element={<MainPage {...props} handleLogin={handleLogin} loggedInStatus={loginStatus} />} />
-                <Route path="norgmar" element={<GamePage {...props} handleLogin={handleLogin} loggedInStatus={loginStatus}/>} />
+                <Route path="/" element={<MainPage {...props} handleLogin={props.handleLogin} loggedInStatus={props.loginStatus} />} />
+                <Route path="home" element={<MainPage {...props} handleLogin={props.handleLogin} loggedInStatus={props.loginStatus} />} />
+                <Route path="norgmar" element={<GamePage {...props} handleLogin={props.handleLogin} loggedInStatus={props.loginStatus}/>} />
                 <Route
                     path="characters"
                     element={
