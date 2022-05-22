@@ -101,11 +101,11 @@ export const StartPageUse = (props) => {
         axios.get("https://inzynierkatest.herokuapp.com/api/v3/logged_in", { withCredentials: true })
             .then(response => {
                 console.log("TO jest glowny response", response)
-                if (response.data.logged_in && loginStatus === "NOT_LOGGED_IN") {
+                if (!response.data.logged_in && loginStatus === "NOT_LOGGED_IN") {
                     console.log("loggen in?", response.data.logged_in)
                     setLoginStatus("LOGGED_IN");
                     setUser(response.data.user);
-                } else if (!response.data.logged_in & loginStatus === "LOGGED_IN") {
+                } else if (response.data.logged_in & loginStatus === "LOGGED_IN") {
                     console.log("loggen in?", response.data.logged_in)
                     setLoginStatus("NOT_LOGGED_IN");
                     setUser({});
