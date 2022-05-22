@@ -20,8 +20,8 @@ export default class Login extends React.Component {
             {withCredentials: true}
         )
             .then(response => {
-                if (response.data.logged_in === true) {    
-                    console.log("logowanie zakonczone", response)
+                if (response.data.logged_in === true) {
+                    console.log(response)
                     this.props.handleSuccessfulAuth(response.data)
         }
         })

@@ -68,7 +68,6 @@ export default class App extends React.Component {
                     response.data.logged_in &&
                     this.state.loggedInStatus === "NOT_LOGGED_IN"
                 ) {
-                    console.log("warunek na tak", response.data.logged_in);
                     this.setState({
                         loggedInStatus: "LOGGED_IN",
                         user: response.data.user,
