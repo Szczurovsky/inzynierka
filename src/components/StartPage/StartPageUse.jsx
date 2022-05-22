@@ -99,19 +99,21 @@ export const StartPageUse = (props) => {
     useEffect(() => {
         // async function fetchData() {
         axios.get("https://inzynierkatest.herokuapp.com/api/v3/logged_in", { withCredentials: true })
+            // .then(response => {
+            //     console.log("TO jest glowny response", response)
+            //     if (!response.data.logged_in && loginStatus === "NOT_LOGGED_IN") {
+            //         console.log("loggen in?", response.data.logged_in)
+            //         setLoginStatus("LOGGED_IN");
+            //         setUser(response.data.user);
+            //     } else if (response.data.logged_in & loginStatus === "LOGGED_IN") {
+            //         console.log("loggen in?", response.data.logged_in)
+            //         setLoginStatus("NOT_LOGGED_IN");
+            //         setUser({});
+            //     }
+            // })
             .then(response => {
-                console.log("TO jest glowny response", response)
-                if (!response.data.logged_in && loginStatus === "NOT_LOGGED_IN") {
-                    console.log("loggen in?", response.data.logged_in)
-                    setLoginStatus("LOGGED_IN");
-                    setUser(response.data.user);
-                } else if (response.data.logged_in & loginStatus === "LOGGED_IN") {
-                    console.log("loggen in?", response.data.logged_in)
-                    setLoginStatus("NOT_LOGGED_IN");
-                    setUser({});
-                }
+                console.log("logged in?", response)
             })
-
             .catch(error => { console.log("errors", error) })
         //     const result = await axios("https://inzynierkatest.herokuapp.com/api/v3/postacs");
         //     const result1 = await axios("https://backinz.herokuapp.com/api/v2/klans");
