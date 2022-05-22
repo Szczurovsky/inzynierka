@@ -14,7 +14,7 @@ export default class Login extends React.Component {
             user: {
                 email: this.state.email,
                 password: this.state.password
-          
+                
             }
         },
             {withCredentials: true}
@@ -23,6 +23,7 @@ export default class Login extends React.Component {
                 if (response.data.logged_in === true) {
                     console.log(response)
                     this.props.handleSuccessfulAuth(response.data)
+                    window.sessionStorage.setItem("zalogowany",true)
         }
         })
         event.preventDefault();
