@@ -10,7 +10,7 @@ export default class Login extends React.Component {
         }
     }
     handleSubmit = (event) => {
-        axios.post("https://inzynierkatest.herokuapp.com/api/v3/sessions", {
+        axios.post("https://inzynierkatest.herokuapp.com/sessions", {
             user: {
                 email: this.state.email,
                 password: this.state.password
