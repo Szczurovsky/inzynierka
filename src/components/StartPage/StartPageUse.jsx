@@ -78,8 +78,15 @@ export const StartPageUse = (props) => {
     //     }
     //     ))
     // }
+    const checkLoginStatus = () => {
+        axios.get("https://inzynierkatest.herokuapp.com/api/v3/logged_in", { withCredentials: true })
+            .then(response => { console.log("to jest loginstat", response) })
+            .catch(error => { console.log("errors", error) })
+    }
+
     useEffect(() => {
         async function fetchData() {
+            checkLoginStatus();
             const result = await axios("https://inzynierkatest.herokuapp.com/api/v3/postacs");
             const result1 = await axios("https://backinz.herokuapp.com/api/v2/klans");
             setKlans(result1.data[0]);
@@ -94,6 +101,8 @@ export const StartPageUse = (props) => {
         // setProfesja(result.data[0].profesja)
 
     }, []);
+
+
     return (
 
         <Router>
