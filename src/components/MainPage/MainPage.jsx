@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from "react";
 import Registration from "../Auth/Registrations"
-
+import Login from "../Auth/Login"
 
 const Page = styled.div`
      width: 100%;
@@ -30,7 +30,8 @@ export const MainPage = (props) => {
        
             <>
               <Page>Status: {props.loggedInStatus}</Page>
-              <Registration handleSuccessfulAuth={handleSuccessfulAuth}/>
+              <Registration handleSuccessfulAuth={handleSuccessfulAuth} />
+              <Login handleSuccessfulAuth={handleSuccessfulAuth} />
             </>
        
     )
