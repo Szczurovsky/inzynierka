@@ -20,7 +20,7 @@ const Page = styled.div`
 export const MainPage = (props) => {
   const navigate = useNavigate();
   const handleSuccessfulAuth = (data) => {
-      props.setLoginStatus("Logged in")
+    props.setLoginStatus("LOGGED_IN")
       props.setUser(data)
       navigate("/norgmar")
     }
