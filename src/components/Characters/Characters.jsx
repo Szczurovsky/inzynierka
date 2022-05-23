@@ -23,9 +23,17 @@ export const Characters = props => {
     //     setData(movies)
     // }
     // window.sessionStorage.setItem("user", response.data.user.id)
-    const updateUser = () => {
+    const updatePostRequest = () => {
+        // fetch(`https://inzynierkatest.herokuapp.com/users/${window.sessionStorage.getItem("user")}/characters/${window.sessionStorage.getItem("user")}`, {
+        //     method: 'put',
+        //     body: JSON.stringify(user),
+        //     headers: { 'Content-Type': 'application/json' },
+        // axios
+        // .put(`https://inzynierkatest.herokuapp.com/users/${window.sessionStorage.getItem("user")}/characters/${window.sessionStorage.getItem("user")}`, user)
+        //     .then(response => { console.log("udalo ise?", response) })
         
-    }
+        }
+    
 
     useEffect(() => {
         axios.get(`https://inzynierkatest.herokuapp.com/users/${window.sessionStorage.getItem("user")}/characters`)
@@ -66,7 +74,7 @@ export const Characters = props => {
   
                 
             }])}>abcdsesfa</button>
-            
+            <button onClick={()=>updatePostRequest()}>Przetestujmy</button>
             {/* <button onClick={updateUser}></button> */}
         {/* {Object.keys(user).map((item, i) => (
             <p key={i}>a</p>
