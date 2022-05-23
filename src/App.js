@@ -59,37 +59,34 @@ export default class App extends React.Component {
     //         });
     // }, []);
     checkLoginStatus = () => {
-        axios
-            .get("https://inzynierkatest.herokuapp.com/logged_in", {
-                withCredentials: true,
-            })
-            // .then((response) => {
-            //     console.log(window.sessionStorage.getItem("klucz"));
-            // })
+        // axios
+        //     .get("https://inzynierkatest.herokuapp.com/logged_in", {
+        //         withCredentials: true,
+        //     })
+        //     // .then((response) => {
+        //     //     console.log(window.sessionStorage.getItem("klucz"));
+        //     // })
 
-            .then((response) => {
-                if (
-                    window.sessionStorage.getItem("zalogowany") &&
-                    this.state.loggedInStatus === "NOT_LOGGED_IN"
-                ) {
-                    console.log("logged_in?", response);
-                    this.setState({
-                        loggedInStatus: "LOGGED_IN",
-                        user: response.data.user,
-                    });
-                } else if (
-                    !window.sessionStorage.getItem("zalogowany") &
-                    (this.state.loggedInStatus === "LOGGED_IN")
-                ) {
-                    console.log("logged_in?", response);
-                    this.setState({
-                        loggedInStatus: "NOT_LOGGED_IN",
-                        user: {},
-                    }).catch((error) => {
-                        console.log("login rror", error);
-                    });
-                }
+        //     .then((response) => {
+        if (
+            window.sessionStorage.getItem("zalogowany") &&
+            this.state.loggedInStatus === "NOT_LOGGED_IN"
+        ) {
+            this.setState({
+                loggedInStatus: "LOGGED_IN",
+                user_id: window.sessionStorage.getItem("user"),
             });
+        } else if (
+            !window.sessionStorage.getItem("zalogowany") &
+            (this.state.loggedInStatus === "LOGGED_IN")
+        ) {
+            this.setState({
+                loggedInStatus: "NOT_LOGGED_IN",
+                user: {},
+            }).catch((error) => {
+                console.log("login rror", error);
+            });
+        }
     };
 
     componentDidMount() {
@@ -103,6 +100,7 @@ export default class App extends React.Component {
                     // setUser={setUser}
                     // setLoginStatus={setLoginStatus}
                     loginStatus={this.state.loggedInStatus}
+                    user_id={this.state.user_id}
                 />
             </div>
         );

@@ -21,9 +21,10 @@ export default class Login extends React.Component {
         )
             .then(response => {
                 if (response.data.logged_in === true) {
-                    console.log(response)
+                    console.log("to jest z login.jsx",response)
                     this.props.handleSuccessfulAuth(response.data)
-                    window.sessionStorage.setItem("zalogowany",true)
+                    window.sessionStorage.setItem("zalogowany", true)
+                    window.sessionStorage.setItem("user",response.data.user.id)
         }
         })
         event.preventDefault();

@@ -150,6 +150,7 @@ export const StartPageUse = (props) => {
                             loading={loading}
                             profesja={profesja}
                             statystyki={statystyki}
+                            user_id={props.user_id}
                         // aktstat={this.state.staty}
                         />
                     }
