@@ -78,7 +78,7 @@ export const Characters = props => {
                 ...user,
                nick:"adrian",
                 staty:"miko",
-                statystyki:[{siła:1}]
+                statystyki:{"sila":"1"}
                 
   
                 
