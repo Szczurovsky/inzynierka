@@ -76,9 +76,10 @@ export const Characters = props => {
             )}
             <button onClick={() => setUser({
                 ...user,
-               nick:"adrian",
-                staty:"miko",
-                statystyki:{"sila":"1"}
+                nick:"ostatni",
+                staty:"test",
+                statystyki: { "sila": "10", "zrecznosc": "3" },
+                umiejetnosci: [{"nazwa":"bedzie","opis":"dobrze" }]
                 
   
                 

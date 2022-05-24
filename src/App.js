@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import React from "react";
+import styled from "styled-components";
 // import MainPage from "./components/MainPage/MainPage";
 import { MainPage } from "./components/MainPage/MainPage";
 import { MenuPC } from "./components/Menu/MenuPC/MenuPC.jsx";
@@ -14,6 +15,7 @@ import { About } from "./components/About/About.jsx";
 // import StartPage from "./components/StartPage/StartPage.jsx";
 import axios from "axios";
 import { StartPageUse } from "./components/StartPage/StartPageUse.jsx";
+
 export default class App extends React.Component {
     constructor(props) {
         super();
@@ -22,52 +24,15 @@ export default class App extends React.Component {
             user: {},
         };
     }
-    // const [loginStatus, setLoginStatus] = useState("NOT_LOGGED_IN");
-    // const [user, setUser] = useState({});
+
     handleLogin = (data) => {
         this.setState({
             loggedInStatus: "LOGGED_IN",
             user: { data },
         });
     };
-    // useEffect(() => {
-    //     // async function fetchData() {
-    //     axios
-    //         .get("https://inzynierkatest.herokuapp.com/api/v3/logged_in", {
-    //             withCredentials: true,
-    //         })
-    //         .then((response) => {
-    //             console.log("TO jest glowny response", response);
-    //             if (
-    //                 response.data.logged_in &&
-    //                 loginStatus === "NOT_LOGGED_IN"
-    //             ) {
-    //                 console.log("Jestes zalogowany");
-    //                 setLoginStatus("LOGGED_IN");
-    //                 setUser(response.data.user);
-    //             } else if (
-    //                 !response.data.logged_in &
-    //                 (loginStatus === "LOGGED_IN")
-    //             ) {
-    //                 console.log("Nie jestes zalogowany");
-    //                 setLoginStatus("NOT_LOGGED_IN");
-    //                 setUser({});
-    //             }
-    //         })
-    //         .catch((error) => {
-    //             console.log("errors", error);
-    //         });
-    // }, []);
-    checkLoginStatus = () => {
-        // axios
-        //     .get("https://inzynierkatest.herokuapp.com/logged_in", {
-        //         withCredentials: true,
-        //     })
-        //     // .then((response) => {
-        //     //     console.log(window.sessionStorage.getItem("klucz"));
-        //     // })
 
-        //     .then((response) => {
+    checkLoginStatus = () => {
         if (
             window.sessionStorage.getItem("zalogowany") &&
             this.state.loggedInStatus === "NOT_LOGGED_IN"

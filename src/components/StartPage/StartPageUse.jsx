@@ -33,109 +33,12 @@ export const StartPageUse = (props) => {
     const [profesja, setProfesja] = useState();
     const [loading, setLoading] = useState(true);
 
-    // componentDidMount = () => {
-    //     setKlans();
-    //     setPostac();
-    // }
-    // async function getKlans() {
-    //     // fetch("https://backinz.herokuapp.com/api/v2/klans")
-    //     //     .then((response) => response.json())
-    //     //     .then((response_items) => {
-    //     //         setKlans({ klans: response_items });
-    //     //     });
-    //     const result = await axios("https://backinz.herokuapp.com/api/v2/klans");
-    //     setKlans({ klans: result });
-    // }
-    async function getPostac() {
-        // fetch("https://backinz.herokuapp.com/api/v2/postacs")
-        //     .then((response) => response.json())
-        //     .then((response_items)=>setPostac(response_items))
-        //     // .then((response_items) => {
-        //     this.setState({ postac: response_items });
-        // });
-
-    }
-    // function getAll() {
-    //     getKlans();
-    //     getPostac();
-    //     console.log(postac)
-    // }
-    // saveStats = (zmienna) => {
-    //     //   const test = {...this.state.postac, : }
-    //     const key = this.state.postac.map(object => object.klan);
-    //     console.log(key)
-    //     const wartosc = key.map(object => object[0].jarl);
-    //     console.log(wartosc)
-    //     // console.log(stats)
-    //     // this.setState({postac: zmienna})
-
-    //     this.setState(prevState => ({
-    //         postac:
-    //             prevState.postac.map(
-    //                 el => el.key === key ? { ...el, step: 2 } : el
-    //             )
-    //     }
-    //     ))
-    // }
-    // const checkLoginStatus = () => {
-    //     axios.get("https://inzynierkatest.herokuapp.com/api/v3/logged_in", { withCredentials: true })
-    //         .then(response => { 
-    //             console.log("TO jest glowny response",response)
-    //             // if (response.data.logged_in && loginStatus === "NOT_LOGGED_IN") {
-    //             //     console.log("loggen in?",response.data.logged_in)
-    //             //     setLoginStatus("LOGGED_IN");
-    //             //     setUser(response.data.user);
-    //             // } else if (!response.data.logged_in & loginStatus === "LOGGED_IN") {
-    //             //     console.log("loggen in?", response.data.logged_in)
-    //             //     setLoginStatus("NOT_LOGGED_IN");
-    //             //     setUser({});
-    //             // }
-    //         })
-           
-    //         .catch(error => { console.log("errors", error) })
-    // }
-
-//     useEffect(() => {
-//         // async function fetchData() {
-//         axios.get("https://inzynierkatest.herokuapp.com/api/v3/logged_in", { withCredentials: true })
-//             .then(response => {
-//                 console.log("TO jest glowny response", response)
-//                 if (!response.data.logged_in && loginStatus === "NOT_LOGGED_IN") {
-//                     console.log("loggen in?", response.data.logged_in)
-//                     setLoginStatus("LOGGED_IN");
-//                     setUser(response.data.user);
-//                 } else if (response.data.logged_in & loginStatus === "LOGGED_IN") {
-//                     console.log("loggen in?", response.data.logged_in)
-//                     setLoginStatus("NOT_LOGGED_IN");
-//                     setUser({});
-//                 }
-//             })
-//             // .then(response => {
-//             //     console.log("logged in?", response)
-//             // })
-//             .catch(error => { console.log("errors", error) })
-//         //     const result = await axios("https://inzynierkatest.herokuapp.com/api/v3/postacs");
-//         //     const result1 = await axios("https://backinz.herokuapp.com/api/v2/klans");
-//         //     setKlans(result1.data[0]);
-//         //     setPostac(result.data[0]);
-//         //     setProfesja(result.data[0].profesja)
-//         //     setLoading(false)
-//         // }
-// //    fetchData();
-
-
-//     },[]);
-
 
     return (
 
-        <Router>
-         
+        <Router>        
             <MenuPC />
             <Routes>
-
-                {/* <Route path="/" element={<MainPage {...props} setLoginStatus={setLoginStatus} setUser={setUser} loggedInStatus={loginStatus}/>} />
-                <Route path="home" element={<MainPage {...props} setLoginStatus={setLoginStatus} setUser={setUser} loggedInStatus={loginStatus}/>} /> */}
                 <Route path="/" element={<MainPage {...props} handleLogin={props.handleLogin} loggedInStatus={props.loginStatus} />} />
                 <Route path="home" element={<MainPage {...props} handleLogin={props.handleLogin} loggedInStatus={props.loginStatus} />} />
                 <Route path="norgmar" element={<GamePage {...props} handleLogin={props.handleLogin} loggedInStatus={props.loginStatus}/>} />
@@ -143,15 +46,13 @@ export const StartPageUse = (props) => {
                     path="characters"
                     element={
                         <Characters
-                            klany={klans}
-                            // saveStats={this.saveStats}
+                            klany={klans}                        
                             statystykiSave={setStatystyki}
                             postac={postac}
                             loading={loading}
                             profesja={profesja}
                             statystyki={statystyki}
                             user_id={props.user_id}
-                        // aktstat={this.state.staty}
                         />
                     }
                 />
