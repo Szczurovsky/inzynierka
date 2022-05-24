@@ -15,6 +15,7 @@ import axios from "axios"
 import React from "react"
 import styled from "styled-components"
 import img1 from "./img1.jpg"
+import logo from "./norgmar.png"
 const MainStyle = styled.div`
   
     display: flex;
@@ -29,6 +30,14 @@ const MainStyle = styled.div`
     color: white;
     letter-spacing: 2px;
 `;
+const Image = styled.img`
+    width:200px;
+    height:50px;
+    position: absolute;
+    top:10px;
+    left:10px;
+    filter: invert(100%);
+`
 export const StartPageUse = (props) => {
     const [klans, setKlans] = useState();
     const [postac, setPostac] = useState();
@@ -54,7 +63,8 @@ export const StartPageUse = (props) => {
 
     return (
     <MainStyle>
-        <Router>        
+            <Router>  
+            <Image src={logo}/>    
             <MenuPC />
             <Routes>
                 <Route path="/" element={<MainPage {...props} handleLogin={props.handleLogin} loggedInStatus={props.loginStatus} />} />
