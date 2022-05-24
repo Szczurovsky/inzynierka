@@ -13,6 +13,22 @@ import { About } from "../About/About.jsx";
 import {Walka} from "../Walka/Walka.jsx"
 import axios from "axios"
 import React from "react"
+import styled from "styled-components"
+import img1 from "./img1.jpg"
+const MainStyle = styled.div`
+  
+    display: flex;
+    height: 100vh;
+    /* background-color:red; */
+    background-image: linear-gradient(black,black),url(${img1});
+    background-size:cover;
+    background-blend-mode:saturation;
+    /* filter: grayscale(100%); */
+    /* justify-content: center; */
+    flex-direction: column;
+    color: white;
+    letter-spacing: 2px;
+`;
 export const StartPageUse = (props) => {
     const [klans, setKlans] = useState();
     const [postac, setPostac] = useState();
@@ -34,8 +50,10 @@ export const StartPageUse = (props) => {
     const [loading, setLoading] = useState(true);
 
 
-    return (
 
+
+    return (
+    <MainStyle>
         <Router>        
             <MenuPC />
             <Routes>
@@ -60,7 +78,8 @@ export const StartPageUse = (props) => {
                 <Route path="ekipa" element={<About />} />
                 <Route path="walka" element={<Walka />} />
             </Routes>
-        </Router>
+            </Router>
+        </MainStyle>
     )
 
 

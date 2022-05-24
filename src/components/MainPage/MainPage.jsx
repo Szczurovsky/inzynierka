@@ -6,15 +6,8 @@ import Registration from "../Auth/Registrations"
 import Login from "../Auth/Login"
 
 const Page = styled.div`
-     /* width: 100%;
-    /* display: flex; */ */
-    /* height:100vh; */
-    background-color:#171717;
-    /* justify-content: center; */
-   flex-direction: column;
-   color:white;
-   letter-spacing: 2px; 
- 
+color:black;
+font-size:1.5rem
 `
 
 export const MainPage = (props) => {
@@ -30,34 +23,12 @@ export const MainPage = (props) => {
 //     // const [error, setError] = useState(null);
     return (
        
-            <>
+            <Page>
               <Page>Status: {props.loggedInStatus}</Page>
               <Registration handleSuccessfulAuth={handleSuccessfulAuth} />
               <Login handleSuccessfulAuth={handleSuccessfulAuth} />
-            </>
+            </Page>
        
     )
 }
 
-// class MainPage extends Component {
-
-
-
-//     const staty = { siła: 1 }
-
-//     async function fetcha() {
-//     const response = await fetch('https://backinz.herokuapp.com/api/v1/klans');
-//     const movies = await response.json();
-//     setData(movies)
-// }
-
-
-//     render() {
-//         return (
-//             <>
-//               <Page></Page>
-//             </>
-//         )
-//     }
-// }
-// export default MainPage

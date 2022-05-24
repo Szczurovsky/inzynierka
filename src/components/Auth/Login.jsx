@@ -1,5 +1,14 @@
 import React from 'react';
 import axios from 'axios';
+import styled from "styled-components"
+
+const Form = styled.form`
+    display:flex;
+
+    
+    max-width:100px;
+`
+
 export default class Login extends React.Component {
     constructor(props) {
         super(props);
@@ -36,8 +45,8 @@ export default class Login extends React.Component {
     }
     render() {
         return (
-            <div>
-                <form onSubmit={this.handleSubmit}>
+            <>
+                <Form onSubmit={this.handleSubmit}>
                     <input
                         type="email"
                         name="email"
@@ -55,8 +64,8 @@ export default class Login extends React.Component {
                         required
                     />
                     <button type="submit">Login</button>
-                </form>
-            </div>
+                </Form>
+            </>
         )
     }
 }
