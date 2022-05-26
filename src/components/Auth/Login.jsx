@@ -9,7 +9,44 @@ justify-content:center;
 flex-direction:column;
 max-width:40%;
 `
+const Input = styled.input`
+    background-color:transparent;
+    border:1px solid white;
+    margin:10px 0px;
+    color:white;
+    padding:15px 5px;
+    letter-spacing: 1px;
+    &:focus{
+    background-color:white;
+    color:black
+    }
+    &:first-child{
+        margin-top:20px;
+    }
+    &:nth-child(2){
+        margin-bottom:20px;
+    }
+    ::placeholder{
+        color:white;
+    letter-spacing: 2px;
 
+
+    }
+  
+`
+const Button = styled.button`
+    background-color:rgba(255,255,255,0.2);
+    border:1px solid red;
+    letter-spacing: 2px;
+
+    margin:10px 0px;
+    color:white;
+    padding:15px 5px;
+     &:hover{
+    background-color:rgba(255,255,255,0.1);
+
+    }
+`
 export default class Login extends React.Component {
     constructor(props) {
         super(props);
@@ -48,7 +85,7 @@ export default class Login extends React.Component {
         return (
             <>
                 <Form onSubmit={this.handleSubmit}>
-                    <input
+                    <Input
                         type="email"
                         name="email"
                         placeholder="Email"
@@ -56,15 +93,15 @@ export default class Login extends React.Component {
                         onChange={this.handleChange}
                         required
                     />
-                    <input
+                    <Input
                         type="password"
                         name="password"
-                        placeholder="Password"
+                        placeholder="Hasło"
                         value={this.state.password}
                         onChange={this.handleChange}
                         required
                     />
-                    <button type="submit">Zaloguj</button>
+                    <Button type="submit">Zaloguj</Button>
                 </Form>
                 {/* <Popup trigger={this.props.showPopupLogin} setTrigger={this.props.setShowPopupLogin}>
                     <p>{this.props.komunikat}</p>
