@@ -2,10 +2,13 @@ import React from 'react';
 import axios from 'axios';
 
 import styled from "styled-components"
-
+import {Popup} from "../Popup/Popup.jsx"
 const Form = styled.form`
-    /* display:flex;
-    flex-direction: column; */
+display:flex;
+align-self:center;
+justify-content:center;
+flex-direction:column;
+max-width:40%;
 `
 
 export default class Registration extends React.Component {
@@ -43,7 +46,7 @@ export default class Registration extends React.Component {
     }
     render() {
         return (
-            <div>
+            <>
                 <Form onSubmit={this.handleSubmit}>
                     <input
                         type="email"
@@ -69,9 +72,13 @@ export default class Registration extends React.Component {
                         onChange={this.handleChange}
                         required
                     />
-                    <button type="submit">Register</button>
+                    <button type="submit">Zarejestruj!</button>
                 </Form>
-            </div>
+
+                {/* <Popup trigger={this.props.showPopupRegistration} setTrigger={this.props.setShowPopupRegistration}>
+                    <p>{this.props.komunikat}</p>
+                </Popup> */}
+            </>
         )
     }
 }

@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 export const Story = props => {
     return (
         <>
-            meta
+            {console.log(props.isLoggedIn())}
         </>
     )
 

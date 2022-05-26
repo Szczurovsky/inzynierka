@@ -1,12 +1,13 @@
 import React from 'react';
 import axios from 'axios';
 import styled from "styled-components"
-
+import {Popup} from "../Popup/Popup.jsx"
 const Form = styled.form`
-    display:flex;
-
-    
-    max-width:100px;
+display:flex;
+align-self:center;
+justify-content:center;
+flex-direction:column;
+max-width:40%;
 `
 
 export default class Login extends React.Component {
@@ -63,8 +64,11 @@ export default class Login extends React.Component {
                         onChange={this.handleChange}
                         required
                     />
-                    <button type="submit">Login</button>
+                    <button type="submit">Zaloguj</button>
                 </Form>
+                {/* <Popup trigger={this.props.showPopupLogin} setTrigger={this.props.setShowPopupLogin}>
+                    <p>{this.props.komunikat}</p>
+                </Popup> */}
             </>
         )
     }
