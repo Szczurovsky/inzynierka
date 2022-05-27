@@ -11,7 +11,7 @@ const Form = styled.form`
     max-width:40%;
 `
 const Input = styled.input`
-    background-color:transparent;
+    background-color: rgba(0, 0, 0,0.5);
     border:1px solid white;
     margin:10px 0px;
     color:white;
@@ -35,7 +35,7 @@ const Input = styled.input`
     }
 `
 const Button = styled.button`
-    background-color:rgba(255,255,255,0.2);
+    background-color:rgba(0,0,0,0.3);
     border:1px solid red;
     letter-spacing: 2px;
     margin:10px 0px;

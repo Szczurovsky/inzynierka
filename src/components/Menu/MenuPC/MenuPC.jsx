@@ -5,10 +5,8 @@ import Logo from "./NorgmarLogo.png"
 import logo from "./norgmar.png"
 
 const Main = styled.div`
-  width:20%;
-    display:flex;
+    width:20%;
     flex-direction:column;
-    
 `
 const Wrapper = styled.div`
 position:fixed;
@@ -17,15 +15,19 @@ width:20%;
 
 `
 const WrapButtons = styled.div`
+ width:100%;
+ display:flex;
+ align-items:center;
+ flex-direction:column;
 
 `
 const Button = styled(Link)`
-    width:100%;
+    width:200px;
     height:20%;
     text-decoration:none;
     padding:20px 10px;
-    margin:30px 0;
-    background: radial-gradient(circle, rgba(0,0,0,0.5466561624649859) 30%, rgba(255,255,255,0.16290266106442575) 200%);
+    margin:15px 0;
+    background-color: rgba(0,0,0,0.2);
     color:white;
     display:flex;align-items:center;
     justify-content:center;
@@ -33,15 +35,12 @@ const Button = styled(Link)`
     border-top:1px solid black;
       &:hover{
             transition:0.5s;
-    /*      background: radial-gradient(circle, rgba(0,0,0,0.5466561624649859) 30%, rgba(255,255,255,0.16290266106442575) 200%); */
             color:red;
+            background-color:rgba(255,255,255,0.2);
   }
 `
 const WrapLogos = styled.div`
     display:flex;
-    
-    /* align-self: center; */
-    /* justify-content: center; */
     flex-direction: column;
 `
 const Image = styled.img`

@@ -3,6 +3,9 @@ html{
   /* overflow-y: hidden; */
       overflow-x: hidden;
         background: url("./img1.jpg") no-repeat fixed; 
+       /* /* background-image: url("./img1.jpg") no-repeat fixed; */
+    background-size:cover;
+    background-blend-mode:saturation; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -15,7 +18,9 @@ body {
     sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  width:100vw;
+   background-color: rgba(0,0,0,0.7); 
+
+  width:100%;
   text-align: center;
 }
 

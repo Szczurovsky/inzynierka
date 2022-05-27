@@ -22,13 +22,11 @@ const MainStyle = styled.div`
   
     display: flex;
     height: 100vh;
-    /* background-image: linear-gradient(black,black),url(${img1});
-    background-size:cover;
-    background-blend-mode:saturation;
- background-attachment: fixed;
+
+ /* background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover; */
+  background-size: cover;  */
     flex-direction: row;
     color: white;
     letter-spacing: 2px;

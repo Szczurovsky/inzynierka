@@ -16,6 +16,8 @@ const Input = styled.input`
     color:white;
     padding:15px 5px;
     letter-spacing: 1px;
+    background-color: rgba(0, 0, 0,0.5);
+
     &:focus{
     background-color:white;
     color:black
@@ -35,7 +37,7 @@ const Input = styled.input`
   
 `
 const Button = styled.button`
-    background-color:rgba(255,255,255,0.2);
+    background-color:rgba(0,0,0,0.3);
     border:1px solid red;
     letter-spacing: 2px;
 

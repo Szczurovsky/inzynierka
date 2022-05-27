@@ -13,7 +13,6 @@ const WindowAut = styled.div`
         display:flex;
     flex-direction: column;
     padding: 30px 10px;
-    background-color: rgba(0, 0, 0,0.4);
     /* background-color:red; */
     
     &:first-child{
@@ -30,11 +29,11 @@ export const WindowAuth = (props) => {
         <Wrapper>
          
             <WindowAut>
-                <Text>Zarejestruj konto przybyszu !</Text>
+                <Text>Zarejestruj konto przybyszu!</Text>
                 <Registrations komunikat="Brawo własnie się Zarejestrowałes!" setShowPopupRegistration={props.setShowPopupRegistrations} showPopupRegistration={props.showPopupRegistrations} handleSuccessfulAuth={props.handleSuccessfulAuth}/>
             </WindowAut>
             <WindowAut>
-                <Text>A więc jesteś znanym poszukiwaczem przygód? <br /> Zaloguj się zatem!</Text>
+                <Text>A więc jesteś znanym <br />poszukiwaczem przygód? <br /><br />Zaloguj się zatem!</Text>
                 <Login komunikat="Brawo własnie się zalogowałeś!" setShowPopupLogin={props.setShowPopupLogin} showPopupLogin={props.showPopupLogin} handleSuccessfulAuth={props.handleSuccessfulAuth}/>
             </WindowAut>     
         </Wrapper>
