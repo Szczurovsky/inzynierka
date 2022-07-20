@@ -45,7 +45,7 @@ export const MainPage = (props) => {
                {/* <Registration handleSuccessfulAuth={handleSuccessfulAuth} /> 
                <Login handleSuccessfulAuth={handleSuccessfulAuth} /> 
              <Page>Status: {props.loggedInStatus}</Page>  */}
-            </Page>
+      </Page>
        
     )
 }
