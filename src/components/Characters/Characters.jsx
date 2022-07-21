@@ -9,6 +9,7 @@ const MyButton = styled.button`
     width: ${props => props.inputWidth || "auto"};
     position: ${props => props.position || "static"};
     top:0;
+    z-index:9999;
     right:10%;
     height:50px;
     color:white;
@@ -53,7 +54,7 @@ export const Characters = props => {
                     <p>{Dice(100)}</p>
                     <p>Nick: {user.nick}</p>
                     <p>Statystyki: Siła: {user.statystyki.sila}</p>
-                    <MyButton position="absolute" inputWidth="auto" onClick={(e) => { setVisibleAbilities(!shouldAbilitiesIsVisible) }}>Pokaż moje umiejętności</MyButton>
+                    <MyButton position="fixed" inputWidth="auto" onClick={() => { setVisibleAbilities(!shouldAbilitiesIsVisible); console.log(shouldAbilitiesIsVisible) }}>Pokaż moje umiejętności</MyButton>
                     <StyledCard>
                     {shouldAbilitiesIsVisible ? "" : (
                         user.umiejetnosci.map(atak => (
