@@ -37,15 +37,37 @@ export const Card = (props) => {
     }
 
     return (
-    
-            <CardComponent id="titleinComponent" onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
-            {props.valuesOfAttack.nazwa}
-            {
-                isHovering &&
-                (
-                    <HoverCard id="opis">{props.valuesOfAttack.opis}</HoverCard>
-                )
-            }
+        
+        <CardComponent id="titleinComponent" onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
+            {props.hasOwnProperty("story") ? (
+                <>
+                    <p>{props.story.npcText}</p>
+                    {console.log(props.story.playerText[0])}
+                    {props.story.playerText[0] === undefined ? "s" : (
+                        <>
+                            {props.story.playerText.map((text) => (
+                                <div key="text.answer1">
+                                    <p>{text.answer1}</p>
+                                    <p>{text.answer2}</p>
+                                    <p>{text.answer3}</p>
+                                </div>
+                            ))}
+                        </>
+                    )}
+                </>
+            ) : (
+                <>
+                    {props.valuesOfAttack.nazwa}
+                    {
+                        isHovering &&
+                        (
+                            <HoverCard id="opis">{props.valuesOfAttack.opis}</HoverCard>
+                        )
+                    }
+                </>
+            )}
+            
+            
             </CardComponent>
            
 
